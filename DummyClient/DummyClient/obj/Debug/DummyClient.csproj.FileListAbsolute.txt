@@ -1,0 +1,9 @@
+c:\users\tpaud\documents\visual studio 2015\Projects\DummyClient\DummyClient\bin\Debug\DummyClient.exe.config
+c:\users\tpaud\documents\visual studio 2015\Projects\DummyClient\DummyClient\bin\Debug\DummyClient.exe
+c:\users\tpaud\documents\visual studio 2015\Projects\DummyClient\DummyClient\bin\Debug\DummyClient.pdb
+c:\users\tpaud\documents\visual studio 2015\Projects\DummyClient\DummyClient\obj\Debug\DummyClient.csprojResolveAssemblyReference.cache
+c:\users\tpaud\documents\visual studio 2015\Projects\DummyClient\DummyClient\obj\Debug\DummyClient.Properties.Resources.resources
+c:\users\tpaud\documents\visual studio 2015\Projects\DummyClient\DummyClient\obj\Debug\DummyClient.csproj.GenerateResource.Cache
+c:\users\tpaud\documents\visual studio 2015\Projects\DummyClient\DummyClient\obj\Debug\DummyClient.exe
+c:\users\tpaud\documents\visual studio 2015\Projects\DummyClient\DummyClient\obj\Debug\DummyClient.pdb
+C:\Users\tpaud\documents\visual studio 2015\Projects\DummyClient\DummyClient\obj\Debug\DummyClient.MainForm.resources
