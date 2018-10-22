@@ -296,7 +296,6 @@ namespace DummyClient
                         count++;
                     }
                 }
-                System.Threading.Thread.Sleep(1);
 
                 if (count > 0)
                     break;
