@@ -16,7 +16,7 @@ namespace DummyClient
     public partial class MainForm : Form
     {
         TcpClient dummyClient = new TcpClient();
-        TcpClient[] dummys = new TcpClient[10000];
+        TcpClient[] dummys = new TcpClient[1000];
 
         bool isNetworkThreadRunning = false;
         bool isProcessRunning = false;
@@ -41,7 +41,7 @@ namespace DummyClient
         {
             InitializeComponent();
 
-            for (int i = 0; i < 10000; i++)
+            for (int i = 0; i < 1000; i++)
             {
                 dummys[i] = new TcpClient();
             }
@@ -76,7 +76,7 @@ namespace DummyClient
 
             dummyClient.Close();
 
-            for (int i = 0; i < 10000; i++)
+            for (int i = 0; i < 1000; i++)
             {
                 dummys[i].Close();
             }
