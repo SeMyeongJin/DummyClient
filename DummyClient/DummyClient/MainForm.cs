@@ -25,6 +25,7 @@ namespace DummyClient
         System.Threading.Thread networkReadThread = null;
         System.Threading.Thread networkSendThread = null;
 
+
         Queue<byte[]> sendPacketQueue = new Queue<byte[]>();
 
         System.Windows.Forms.Timer timer;
@@ -32,6 +33,7 @@ namespace DummyClient
 
         int count = 0;
         int UserNum = 0;
+        int randMax = 0;
         int Min = 0;
         int Max = 0;
         int Avg = 0;
@@ -263,40 +265,42 @@ namespace DummyClient
             Min = Convert.ToInt32(TextBoxMin.Text);
             Max = Convert.ToInt32(TextBoxMax.Text);
             Avg = (Min + Max) / 2;
+            randMax = Convert.ToInt32(TextBoxUser.Text) - 1;
+
+            int port = Convert.ToInt32(TextBoxPort.Text);
 
             while (isTestRunning)
             {
                 if ( count >= Avg )
                 {
-                    if (dummys[rand.Next(0, 999)].IsConnected())
+                    if (dummys[rand.Next(0, randMax)].IsConnected())
                     {
-                        dummys[rand.Next(0, 999)].Close();
+                        dummys[rand.Next(0, randMax)].Close();
                         count--;
                     }
                 }
                 if (count > Min || count < Max)
                 {
-                    if (dummys[rand.Next(0, 999)].IsConnected())
+                    if (dummys[rand.Next(0, randMax)].IsConnected())
                     {
-                        dummys[rand.Next(0, 999)].Close();
+                        dummys[rand.Next(0, randMax)].Close();
                         count--;
                     }
-                    if (!dummys[rand.Next(0, 999)].IsConnected())
+                    if (!dummys[rand.Next(0, randMax)].IsConnected())
                     {
-                        dummys[rand.Next(0, 999)].Connect("127.0.0.1", 3500);
+                        dummys[rand.Next(0, randMax)].Connect("127.0.0.1", port);
                         count++;
                     }
                 }
 
                 if (count <= Avg )
                 {
-                    if (!dummys[rand.Next(0, 999)].IsConnected())
+                    if (!dummys[rand.Next(0, randMax)].IsConnected())
                     {
-                        dummys[rand.Next(0, 999)].Connect("127.0.0.1", 3500);
+                        dummys[rand.Next(0, randMax)].Connect("127.0.0.1", port);
                         count++;
                     }
                 }
-
                 if (count > 0)
                     break;
             }
