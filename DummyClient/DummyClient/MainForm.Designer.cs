@@ -47,6 +47,13 @@
             this.LabelRange2 = new System.Windows.Forms.Label();
             this.TextBoxMax = new System.Windows.Forms.TextBox();
             this.TestConnectBtn = new System.Windows.Forms.Button();
+            this.GroupBox3 = new System.Windows.Forms.GroupBox();
+            this.LabelMsgText = new System.Windows.Forms.Label();
+            this.LabelInterval2 = new System.Windows.Forms.Label();
+            this.TextBoxInterval2 = new System.Windows.Forms.TextBox();
+            this.LabelCount = new System.Windows.Forms.Label();
+            this.TextBoxCount = new System.Windows.Forms.TextBox();
+            this.TestMsgBtn = new System.Windows.Forms.Button();
             this.TextBoxSend = new System.Windows.Forms.TextBox();
             this.SendBtn = new System.Windows.Forms.Button();
             this.ListBoxLog = new System.Windows.Forms.ListBox();
@@ -167,7 +174,7 @@
             //
             // GroupBox2
             //
-            this.GroupBox2.Location = new System.Drawing.Point(14, 141);
+            this.GroupBox2.Location = new System.Drawing.Point(14, 171);
             this.GroupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.GroupBox2.Name = "GroupBox2";
             this.GroupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -179,7 +186,7 @@
             // LabelTestText
             // 
             this.LabelTestText.AutoSize = true;
-            this.LabelTestText.Location = new System.Drawing.Point(22, 175);
+            this.LabelTestText.Location = new System.Drawing.Point(22, 205);
             this.LabelTestText.Name = "LabelTestText";
             this.LabelTestText.Size = new System.Drawing.Size(280, 38);
             this.LabelTestText.TabIndex = 46;
@@ -189,7 +196,7 @@
             // LabelInterval
             // 
             this.LabelInterval.AutoSize = true;
-            this.LabelInterval.Location = new System.Drawing.Point(22, 219);
+            this.LabelInterval.Location = new System.Drawing.Point(22, 249);
             this.LabelInterval.Name = "LabelInterval";
             this.LabelInterval.Size = new System.Drawing.Size(90, 38);
             this.LabelInterval.TabIndex = 51;
@@ -197,7 +204,7 @@
             // 
             // textBoxInterval
             // 
-            this.TextBoxInterval.Location = new System.Drawing.Point(87, 211);
+            this.TextBoxInterval.Location = new System.Drawing.Point(87, 241);
             this.TextBoxInterval.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TextBoxInterval.MaxLength = 5;
             this.TextBoxInterval.Name = "TextBoxInterval";
@@ -210,7 +217,7 @@
             // LabelRange
             // 
             this.LabelRange.AutoSize = true;
-            this.LabelRange.Location = new System.Drawing.Point(150, 219);
+            this.LabelRange.Location = new System.Drawing.Point(150, 249);
             this.LabelRange.Name = "LabelRange";
             this.LabelRange.Size = new System.Drawing.Size(90, 38);
             this.LabelRange.TabIndex = 55;
@@ -218,7 +225,7 @@
             // 
             // textBoxMin
             // 
-            this.TextBoxMin.Location = new System.Drawing.Point(290, 211);
+            this.TextBoxMin.Location = new System.Drawing.Point(290, 241);
             this.TextBoxMin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TextBoxMin.MaxLength = 5;
             this.TextBoxMin.Name = "TextBoxInterval";
@@ -230,7 +237,7 @@
             // 
             // textBoxMax
             // 
-            this.TextBoxMax.Location = new System.Drawing.Point(380, 211);
+            this.TextBoxMax.Location = new System.Drawing.Point(380, 241);
             this.TextBoxMax.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TextBoxMax.MaxLength = 5;
             this.TextBoxMax.Name = "TextBoxInterval";
@@ -243,7 +250,7 @@
             // LabelRange2
             // 
             this.LabelRange2.AutoSize = true;
-            this.LabelRange2.Location = new System.Drawing.Point(350, 219);
+            this.LabelRange2.Location = new System.Drawing.Point(350, 249);
             this.LabelRange2.Name = "LabelRange2";
             this.LabelRange2.Size = new System.Drawing.Size(90, 38);
             this.LabelRange2.TabIndex = 58;
@@ -252,7 +259,7 @@
             // TestConnectBtn
             //
             this.TestConnectBtn.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TestConnectBtn.Location = new System.Drawing.Point(481, 205);
+            this.TestConnectBtn.Location = new System.Drawing.Point(481, 235);
             this.TestConnectBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TestConnectBtn.Name = "TestConnectBtn";
             this.TestConnectBtn.Size = new System.Drawing.Size(98, 38);
@@ -260,10 +267,85 @@
             this.TestConnectBtn.Text = "접속 테스트";
             this.TestConnectBtn.UseVisualStyleBackColor = true;
             this.TestConnectBtn.Click += new System.EventHandler(this.OnTestConnectBtn);
+            //
+            // GroupBox3
+            //
+            this.GroupBox3.Location = new System.Drawing.Point(14, 311);
+            this.GroupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.GroupBox3.Name = "GroupBox3";
+            this.GroupBox3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.GroupBox3.Size = new System.Drawing.Size(571, 115);
+            this.GroupBox3.TabIndex = 70;
+            this.GroupBox3.TabStop = false;
+            this.GroupBox3.Text = "Send Message";
+            // 
+            // LabelMsgText
+            // 
+            this.LabelMsgText.AutoSize = true;
+            this.LabelMsgText.Location = new System.Drawing.Point(22, 345);
+            this.LabelMsgText.Name = "LabelMsgText";
+            this.LabelMsgText.Size = new System.Drawing.Size(280, 38);
+            this.LabelMsgText.TabIndex = 71;
+            this.LabelMsgText.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.LabelMsgText.Text = "Interval(ms)마다 접속된 서버로 메세지를 입력된 개수 만큼 전송합니다.";
+            // 
+            // LabelInterval2
+            // 
+            this.LabelInterval2.AutoSize = true;
+            this.LabelInterval2.Location = new System.Drawing.Point(22, 389);
+            this.LabelInterval2.Name = "LabelInterval2";
+            this.LabelInterval2.Size = new System.Drawing.Size(90, 38);
+            this.LabelInterval2.TabIndex = 72;
+            this.LabelInterval2.Text = "Interval:";
+            // 
+            // TextBoxInterval2
+            // 
+            this.TextBoxInterval2.Location = new System.Drawing.Point(87, 381);
+            this.TextBoxInterval2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TextBoxInterval2.MaxLength = 5;
+            this.TextBoxInterval2.Name = "TextBoxInterval2";
+            this.TextBoxInterval2.Size = new System.Drawing.Size(40, 25);
+            this.TextBoxInterval2.TabIndex = 73;
+            this.TextBoxInterval2.Text = "10";
+            this.TextBoxInterval2.WordWrap = false;
+            this.TextBoxInterval2.TextChanged += new System.EventHandler(this.TextBoxInterval2_TextChanged);
+            // 
+            // LabelCount
+            // 
+            this.LabelCount.AutoSize = true;
+            this.LabelCount.Location = new System.Drawing.Point(150, 389);
+            this.LabelCount.Name = "LabelRange";
+            this.LabelCount.Size = new System.Drawing.Size(90, 38);
+            this.LabelCount.TabIndex = 74;
+            this.LabelCount.Text = "전송할 메세지 개수:";
+            // 
+            // textBoxCount
+            // 
+            this.TextBoxCount.Location = new System.Drawing.Point(290, 381);
+            this.TextBoxCount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TextBoxCount.MaxLength = 5;
+            this.TextBoxCount.Name = "TextBoxCount";
+            this.TextBoxCount.Size = new System.Drawing.Size(40, 25);
+            this.TextBoxCount.TabIndex = 75;
+            this.TextBoxCount.Text = "100";
+            this.TextBoxCount.WordWrap = false;
+            this.TextBoxCount.TextChanged += new System.EventHandler(this.TextBoxCount_TextChanged);
+            //
+            // TestMsgBtn
+            //
+            this.TestMsgBtn.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TestMsgBtn.Location = new System.Drawing.Point(481, 375);
+            this.TestMsgBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TestMsgBtn.Name = "TestMsgBtn";
+            this.TestMsgBtn.Size = new System.Drawing.Size(98, 38);
+            this.TestMsgBtn.TabIndex = 76;
+            this.TestMsgBtn.Text = "전송 테스트";
+            this.TestMsgBtn.UseVisualStyleBackColor = true;
+            this.TestMsgBtn.Click += new System.EventHandler(this.OnTestMsgBtn);
             // 
             // TextBoxSend
             // 
-            this.TextBoxSend.Location = new System.Drawing.Point(14, 270);
+            this.TextBoxSend.Location = new System.Drawing.Point(14, 460);
             this.TextBoxSend.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TextBoxSend.MaxLength = 32;
             this.TextBoxSend.Name = "TextBoxSend";
@@ -275,7 +357,7 @@
             // SendBtn
             // 
             this.SendBtn.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.SendBtn.Location = new System.Drawing.Point(481, 265);
+            this.SendBtn.Location = new System.Drawing.Point(481, 455);
             this.SendBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SendBtn.Name = "SendBtn";
             this.SendBtn.Size = new System.Drawing.Size(98, 38);
@@ -289,17 +371,17 @@
             this.ListBoxLog.FormattingEnabled = true;
             this.ListBoxLog.HorizontalScrollbar = true;
             this.ListBoxLog.ItemHeight = 15;
-            this.ListBoxLog.Location = new System.Drawing.Point(14, 310);
+            this.ListBoxLog.Location = new System.Drawing.Point(14, 500);
             this.ListBoxLog.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ListBoxLog.Name = "listBoxLog";
-            this.ListBoxLog.Size = new System.Drawing.Size(564, 240);
+            this.ListBoxLog.Size = new System.Drawing.Size(564, 70);
             this.ListBoxLog.TabIndex = 41;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 560);
+            this.ClientSize = new System.Drawing.Size(592, 580);
             this.Controls.Add(this.ConnectBtn);
             this.Controls.Add(this.LabelConnected);
             this.Controls.Add(this.LabelTestText);
@@ -311,11 +393,18 @@
             this.Controls.Add(this.LabelRange2);
             this.Controls.Add(this.TestConnectBtn);
             this.Controls.Add(this.DisconnectBtn);
+            this.Controls.Add(this.LabelMsgText);
+            this.Controls.Add(this.LabelInterval2);
+            this.Controls.Add(this.TextBoxInterval2);
+            this.Controls.Add(this.LabelCount);
+            this.Controls.Add(this.TextBoxCount);
+            this.Controls.Add(this.TestMsgBtn);
             this.Controls.Add(this.TextBoxSend);
             this.Controls.Add(this.SendBtn);
             this.Controls.Add(this.ListBoxLog);
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.GroupBox2);
+            this.Controls.Add(this.GroupBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainForm";
@@ -349,6 +438,13 @@
         private System.Windows.Forms.TextBox TextBoxMin;
         private System.Windows.Forms.TextBox TextBoxMax;
         private System.Windows.Forms.Button TestConnectBtn;
+        private System.Windows.Forms.GroupBox GroupBox3;
+        private System.Windows.Forms.Label LabelMsgText;
+        private System.Windows.Forms.Label LabelInterval2;
+        private System.Windows.Forms.TextBox TextBoxInterval2;
+        private System.Windows.Forms.Label LabelCount;
+        private System.Windows.Forms.TextBox TextBoxCount;
+        private System.Windows.Forms.Button TestMsgBtn;
         private System.Windows.Forms.TextBox TextBoxSend;
         private System.Windows.Forms.Button SendBtn;
         private System.Windows.Forms.ListBox ListBoxLog;

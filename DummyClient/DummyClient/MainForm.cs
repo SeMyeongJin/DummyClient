@@ -21,6 +21,7 @@ namespace DummyClient
         bool isNetworkThreadRunning = false;
         bool isProcessRunning = false;
         bool isTestRunning = false;
+        bool isMsgTestRunning = false;
 
         System.Threading.Thread networkReadThread = null;
         System.Threading.Thread networkSendThread = null;
@@ -30,6 +31,7 @@ namespace DummyClient
 
         System.Windows.Forms.Timer timer;
         System.Windows.Forms.Timer TestTimer;
+        System.Windows.Forms.Timer TestTimer2;
 
         int count = 0;
         int UserNum = 0;
@@ -37,6 +39,7 @@ namespace DummyClient
         int Min = 0;
         int Max = 0;
         int Avg = 0;
+        int MsgCount = 0;
 
 
         public MainForm()
@@ -65,6 +68,7 @@ namespace DummyClient
 
             TestConnectBtn.Enabled = false;
             DisconnectBtn.Enabled = false;
+            TestMsgBtn.Enabled = false;
 
             LabelConnected.Text = string.Format("접속 클라이언트 수 : {0}", count);
 
@@ -75,6 +79,8 @@ namespace DummyClient
         {
             isNetworkThreadRunning = false;
             isProcessRunning = false;
+            isTestRunning = false;
+            isMsgTestRunning = false;
 
             dummyClient.Close();
 
@@ -102,7 +108,7 @@ namespace DummyClient
                 ConnectBtn.Enabled = false;
                 TestConnectBtn.Enabled = true;
                 DisconnectBtn.Enabled = true;
-
+                TestMsgBtn.Enabled = true;
                 count = Convert.ToInt32(TextBoxUser.Text);
             }
             else
@@ -110,6 +116,7 @@ namespace DummyClient
                 return;
             }
             TestConnectBtn.ForeColor = Color.Black;
+            TestMsgBtn.ForeColor = Color.Black;
             LabelConnected.Text = string.Format("접속 클라이언트 수 : {0}", count);
         }
 
@@ -133,6 +140,26 @@ namespace DummyClient
             }
         }
 
+        private void OnTestMsgBtn(object sender, EventArgs e)
+        {
+            if (TestMsgBtn.ForeColor == Color.Black)
+            {
+                isMsgTestRunning = true;
+                TestMsgBtn.ForeColor = Color.Blue;
+                TestTimer2 = new System.Windows.Forms.Timer();
+                TestTimer2.Tick += new EventHandler(MsgTest);
+                TestTimer2.Interval = Convert.ToInt32(TextBoxInterval2.Text);
+                TestTimer2.Start();
+                return;
+            }
+            if (TestMsgBtn.ForeColor == Color.Blue)
+            {
+                isMsgTestRunning = false;
+                TestMsgBtn.ForeColor = Color.Black;
+                return;
+            }
+        }
+
         private void OnDisconnectBtn(object sender, EventArgs e)
         {
             SetDisconnected();
@@ -146,6 +173,7 @@ namespace DummyClient
             }
             count = 0;
             isTestRunning = false;
+            isMsgTestRunning = false;
         }
 
         private void OnSendBtn(object sender, EventArgs e)
@@ -307,6 +335,34 @@ namespace DummyClient
             LabelConnected.Text = string.Format("접속 클라이언트 수 : {0}", count);
         }
 
+        private void MsgTest(object sender, EventArgs e)
+        {
+            MsgCount = Convert.ToInt32(TextBoxCount.Text);
+
+            Random rand = new Random();
+            randMax = Convert.ToInt32(TextBoxUser.Text) - 1;
+            Byte[] writeBuffer = new byte[256];
+
+            
+
+            while (isMsgTestRunning)
+            {
+                for(int i = 0; i < MsgCount; i++)
+                {
+                    if (dummys[rand.Next(0, randMax)].IsConnected())
+                    {
+                        PT_DELIVERY_CHAT chatPack = new PT_DELIVERY_CHAT("hell", GValue.packetNumber++);
+
+                        writeBuffer = Serialize(chatPack);
+
+                        dummys[rand.Next(0, randMax)].SendData(writeBuffer);
+                    }
+                }
+                if (MsgCount > 0)
+                    break;
+            }
+        }
+
         public void SetDisconnected()
         {
             if (ConnectBtn.Enabled == false)
@@ -346,6 +402,16 @@ namespace DummyClient
         }
 
         private void TextBoxMax_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBoxInterval2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBoxCount_TextChanged(object sender, EventArgs e)
         {
 
         }

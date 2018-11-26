@@ -7,3 +7,6 @@ c:\users\tpaud\documents\visual studio 2015\Projects\DummyClient\DummyClient\obj
 c:\users\tpaud\documents\visual studio 2015\Projects\DummyClient\DummyClient\obj\Debug\DummyClient.exe
 c:\users\tpaud\documents\visual studio 2015\Projects\DummyClient\DummyClient\obj\Debug\DummyClient.pdb
 C:\Users\tpaud\documents\visual studio 2015\Projects\DummyClient\DummyClient\obj\Debug\DummyClient.MainForm.resources
+D:\DummyClient\DummyClient\DummyClient\bin\Debug\DummyClient.exe.config
+D:\DummyClient\DummyClient\DummyClient\obj\Debug\DummyClient.exe
+D:\DummyClient\DummyClient\DummyClient\obj\Debug\DummyClient.pdb
